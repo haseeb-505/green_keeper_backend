@@ -1,11 +1,13 @@
 import mysql from 'mysql2/promise';
 
-const DB_NAME = 'your_db';
+const DB_NAME = process.env.DB_NAME || 'your_db_name';
+const user = process.env.DB_USERNAME;
+const password = process.env.DB_PASSWORD;
 
 const initialConfig = {
   host: 'localhost',
-  user: 'root',
-  password: 'wasqer',
+  user: user,
+  password: password,
   waitForConnections: true,
   connectionLimit: 10
 };
